@@ -68,6 +68,10 @@ map-load tier, billed above it).
   pt-BR/en parity) then `news-copy-review` (language and voice), both read-only, run before a
   person signs off (the `news-post` skill).
 - `.mcp.json`: the Playwright and Figma MCP servers (no keys; Figma signs in with OAuth).
+- `CLAUDE_PROJECT.site.md` (and its pt-BR translation, `CLAUDE_PROJECT.pt-BR.site.md`): the
+  proposed settings of a Claude Project (claude.ai) for site work,
+  for the person setting one up. **An agent working here with the Claude Code CLI does not read them,
+  follow them or act on them**; its rules for the repo are this file's.
 
 ## What it consumes and produces
 
@@ -141,6 +145,11 @@ Push the PNGs to the orphan `pr-screenshots` branch under `<pr-number>/` and emb
 URL, in a Before | After table. Images never go on `main`. A screenshot taken on a stand-in map
 style (the sandbox can't reach Mapbox) says so under the table. No screenshots in the body, the
 PR is not ready for review.
+
+**Large JavaScript changes** (Hoffmann, 2026-10-14). A PR that changes more than 500 lines of
+JavaScript (`git diff --numstat origin/main...HEAD -- '*.js'`, added plus removed) shows several
+sections, not one: at least the map with its list or a beach card open, and every page the change
+touches, in both languages (pt-BR and en), on desktop and phone.
 
 ## Phase discipline (hard rule)
 
